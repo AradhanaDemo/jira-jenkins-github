@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the Maven project...'
-                sh 'mvn clean package'
+                sh '/opt/apache-maven-3.9.6/bin/mvn clean package'
             }
             post {
                 always {
