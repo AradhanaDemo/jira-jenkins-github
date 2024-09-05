@@ -27,6 +27,7 @@ pipeline {
 #             sh """
 #                scp target/hello-world-1.0-SNAPSHOT.jar ${STAGING_SERVER}:${STAGING_DIR}
 #             """
+                
             }
             post {
                 always {
