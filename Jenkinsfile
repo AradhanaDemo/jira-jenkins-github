@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    tools{
+        jdk "jdk"
+        maven "mvn"
+    }
+    
     environment {
         STAGING_SERVER = 'user@staging-server-ip'
         PROD_SERVER = 'user@production-server-ip'
