@@ -24,14 +24,14 @@ pipeline {
             }
             steps {
                 echo 'Deploying to Staging...'
-#             sh """
-#                scp target/hello-world-1.0-SNAPSHOT.jar ${STAGING_SERVER}:${STAGING_DIR}
-#             """
+            //  sh """
+            //     scp target/hello-world-1.0-SNAPSHOT.jar ${STAGING_SERVER}:${STAGING_DIR}
+            // """
                 
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-stg-1', environmentName: 'us-stg-1', environmentType: 'staging'
+                    jiraSendDeploymentInfo environmentId: 'us-stg-1', environmentName: 'dev', environmentType: 'staging'
                 }
             }
         }
@@ -41,13 +41,13 @@ pipeline {
             }
             steps {
                 echo 'Deploying to Production...'
-#             sh """
-#                 scp target/hello-world-1.0-SNAPSHOT.jar ${PROD_SERVER}:${PROD_DIR}
-#              """
+             // sh """
+             //     scp target/hello-world-1.0-SNAPSHOT.jar ${PROD_SERVER}:${PROD_DIR}
+             //  """
             }
             post {
                 always {
-                    jiraSendDeploymentInfo environmentId: 'us-prod-1', environmentName: 'us-prod-1', environmentType: 'production'
+                    jiraSendDeploymentInfo environmentId: 'us-prod-1', environmentName: 'prod', environmentType: 'production'
                 }
             }
         }
