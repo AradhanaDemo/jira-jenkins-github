@@ -1,10 +1,5 @@
 pipeline {
     agent any
-    tools{
-        jdk "jdk"
-        maven "mvn"
-    }
-    
     environment {
         STAGING_SERVER = 'user@staging-server-ip'
         PROD_SERVER = 'user@production-server-ip'
@@ -29,9 +24,9 @@ pipeline {
             }
             steps {
                 echo 'Deploying to Staging...'
-//               sh """
-//                  scp target/hello-world-1.0-SNAPSHOT.jar ${STAGING_SERVER}:${STAGING_DIR}
-//              """
+#             sh """
+#                scp target/hello-world-1.0-SNAPSHOT.jar ${STAGING_SERVER}:${STAGING_DIR}
+#             """
             }
             post {
                 always {
@@ -45,9 +40,9 @@ pipeline {
             }
             steps {
                 echo 'Deploying to Production...'
-//             sh """
-//                  scp target/hello-world-1.0-SNAPSHOT.jar ${PROD_SERVER}:${PROD_DIR}
-//               """
+#             sh """
+#                 scp target/hello-world-1.0-SNAPSHOT.jar ${PROD_SERVER}:${PROD_DIR}
+#              """
             }
             post {
                 always {
