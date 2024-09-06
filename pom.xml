@@ -5,32 +5,39 @@
 
     <groupId>com.example</groupId>
     <artifactId>hello-world</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source> <!-- Latest LTS Java version -->
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <!-- No dependencies needed for a basic HelloWorld application -->
+    </dependencies>
 
     <build>
         <plugins>
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.11.0</version> <!-- Latest as of August 2024 -->
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
+
+            <!-- Maven JAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.3.0</version> <!-- Latest as of August 2024 -->
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.HelloWorld</mainClass>
+                            <mainClass>com.example.HelloWorld</mainClass> <!-- Main class specified -->
                         </manifest>
                     </archive>
                 </configuration>
