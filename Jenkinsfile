@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         STAGING_SERVER = 'user@staging-server-ip'
-        PROD_SERVER = 'user@production-server-ip34'
+        PROD_SERVER = 'user@production-server-ip78'
         STAGING_DIR = '/path/to/staging/dir'
         PROD_DIR = '/path/to/production/dir'
     }
